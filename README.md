@@ -1,6 +1,6 @@
 # James Webb Space Telescope Observation Tracker
 
-This is a tracking tool for the James Webb Space Telescope. Using the [observation schedule data published by STScI](https://www.stsci.edu/jwst/science-execution/observing-schedules), it will query for new observation events and send tweets when one is occurring.
+This is a tracking tool for the James Webb Space Telescope. Using [observation schedules published by the Space Telescope Science Institute](https://www.stsci.edu/jwst/science-execution/observing-schedules), it will query for new observation events and send tweets when one is occurring.
 
 https://twitter.com/JWSTObservation
 
