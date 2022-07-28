@@ -2,7 +2,6 @@ import requests
 import os
 from bs4 import BeautifulSoup
 from datetime import datetime
-from datetime import timezone
 from datetime import timedelta
 import urllib
 import pandas as pd
