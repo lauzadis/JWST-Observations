@@ -155,7 +155,11 @@ class JWSTObservationBot():
             else:
                 duration += f", {hours} {hour_plural} and {minutes} {minute_plural}"
 
-        text = f"I am now observing {event['TARGET NAME']} using {event['SCIENCE INSTRUMENT AND MODE']} for {duration}. Keywords: {event['KEYWORDS']}"
+        proposal_root = "https://www.stsci.edu/jwst/phase2-public/"
+
+        text = f"I am now observing {event['TARGET NAME']} using {event['SCIENCE INSTRUMENT AND MODE']} for {duration}. "
+        text += f"Keywords: {event['KEYWORDS']}. "
+        text += f"Proposal: {proposal_root + event.name.split(':')[0]}.pdf"
         print(f"Tweeting: {text}")
         r = requests.post("https://api.twitter.com/2/tweets", auth=self.oauth, json={"text": text})
         
