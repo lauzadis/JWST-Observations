@@ -159,7 +159,7 @@ class JWSTObservationBot():
 
         text = f"I am now observing {event['TARGET NAME']} using {event['SCIENCE INSTRUMENT AND MODE']} for {duration}. "
         text += f"Keywords: {event['KEYWORDS']}. "
-        text += f"Proposal: {proposal_root + event.name.split(':')[0]}.pdf #{event.name.split(':')[1]}"
+        text += f"Proposal: {proposal_root + event.name.split(':')[0]}.pdf {':'.join(event.name.split(':')[1:])}"
 
         print(f"Tweeting: {text}")
         r = requests.post("https://api.twitter.com/2/tweets", auth=self.oauth, json={"text": text})
