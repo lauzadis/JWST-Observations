@@ -100,7 +100,7 @@ class JWSTObservationBot():
                     df.loc[len(df)] = data
 
                 df["SCHEDULED START TIME"] = df["SCHEDULED START TIME"].apply(self.parse_start_time)
-                df = df[df["SCHEDULED START TIME"].notna()]
+                df = df[df["SCHEDULED START TIME"].notna() & df["TARGET NAME"].notna()]
 
                 df["DURATION"] = df["DURATION"].apply(self.parse_duration)
 
